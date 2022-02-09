@@ -8,8 +8,9 @@ var intersectionObserver = new IntersectionObserver(function (entries) {
   if (entries[0].intersectionRatio <= 0) return;
 
   // loadItems(10);
-  // console.dir(entries[0].target);
+  console.dir(entries[0].target);
   entries[0].target.src = entries[0].target.dataset.src;
+  this.unobserve(entries[0].target);
 }, options);
 // start observing
 intersectionObserver.observe(document.querySelector('iframe'));
